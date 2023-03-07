@@ -4,7 +4,22 @@ const listPeople = (arr) => {
 
     // YOUR CODE HERE
     return arr.map(person => {
-        return person.name + ", " + person.location + (person.private ? "" : ` (${person.phone})`)
+        
+        // set up the name and location
+        let listing = person.name + ", " + person.location
+
+        // if private isn't truthy...
+        if (!person.private) {
+
+            // ...add a space, parentheses, and the phone number
+            listing += ` (${person.phone})`
+        }
+
+        // plug the result into your new array from .map!
+        return listing
+        
+        // you could also do all of the above with this line :)
+        // return person.name + ", " + person.location + (person.private ? "" : ` (${person.phone})`)
     })
 }
 
