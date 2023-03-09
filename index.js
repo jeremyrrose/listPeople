@@ -3,9 +3,11 @@ import people from './people.js'
 const listPeople = (arr) => {
 
     // MODIFY THE CODE BELOW
-    return arr.map(person => {
-        return person.name + ", " + person.location + (person.private ? "" : ` (${person.phone})`)
-    })
+    return arr
+        .filter(person => !person.private)
+        .map(person => {
+            return person.name + ", " + person.location + (person.private ? "" : ` (${person.phone})`)
+        })
 }
 
 //////////////////////////////
